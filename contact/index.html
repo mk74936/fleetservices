@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Fleet Services</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Contact Fleet Services</p>
+          <h1>We’re here to keep your fleet moving.</h1>
+          <p class="lead">
+            Reach our service team for scheduling, emergency support, or general inquiries. We respond
+            to all messages within one business day.
+          </p>
+          <div class="info-grid">
+            <div>
+              <h2>Call us</h2>
+              <p><a href="tel:+18005551234">(800) 555-1234</a></p>
+            </div>
+            <div>
+              <h2>Email</h2>
+              <p><a href="mailto:service@fleetservices.com">service@fleetservices.com</a></p>
+            </div>
+            <div>
+              <h2>Visit</h2>
+              <p>2450 Logistics Avenue<br />Denver, CO 80202</p>
+            </div>
+            <div>
+              <h2>Hours</h2>
+              <p>Mon–Fri: 7:00 AM – 6:00 PM<br />Sat: 8:00 AM – 2:00 PM</p>
+            </div>
+          </div>
+          <a
+            class="button"
+            href="https://www.google.com/maps/dir/?api=1&destination=2450%20Logistics%20Avenue%2C%20Denver%2C%20CO%2080202"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Get Directions
+          </a>
+        </div>
+        <div class="card map-card">
+          <iframe
+            title="Fleet Services location"
+            src="https://www.google.com/maps?q=2450+Logistics+Avenue,+Denver,+CO+80202&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="card form-card">
+        <div class="form-header">
+          <h2>Send us a message</h2>
+          <p>Tell us how we can help and we’ll get back to you shortly.</p>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Alex Johnson" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="(555) 123-4567" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="alex@company.com" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Let us know how we can help." required></textarea>
+          </label>
+          <button type="submit" class="button">Send message</button>
+        </form>
+        <div id="success-message" class="success-message" aria-live="polite" hidden>
+          <strong>Thanks for reaching out!</strong>
+          <p>Your message is on its way. Our team will respond within one business day.</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const form = document.getElementById("contact-form");
+      const successMessage = document.getElementById("success-message");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        successMessage.hidden = false;
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
