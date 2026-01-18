@@ -1,23 +1,38 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  IconBadgeCheck,
+  IconBattery,
+  IconCalendarCheck,
+  IconClock,
+  IconDroplet,
+  IconGauge,
+  IconMapPin,
+  IconMessage,
+  IconPhone,
+  IconShieldCheck,
+  IconSnowflake,
+  IconSparkles,
+  IconWrench,
+} from "./components/icons";
 import { quickIssues, site } from "./lib/site";
 
 const trustSignals = [
-  "Certified technicians",
-  "Transparent pricing",
-  "Fast turnaround",
-  "Warranty on parts & labor",
+  { label: "Certified technicians", icon: IconBadgeCheck },
+  { label: "Transparent pricing", icon: IconShieldCheck },
+  { label: "Fast turnaround", icon: IconClock },
+  { label: "Warranty on parts & labor", icon: IconSparkles },
 ];
 
 const featuredServices = [
-  "Oil Change",
-  "Brake Service",
-  "Tire Service",
-  "Engine Diagnostics",
-  "Suspension",
-  "Battery Service",
-  "AC Service",
-  "Safety Inspection",
+  { label: "Oil Change", icon: IconDroplet },
+  { label: "Brake Service", icon: IconWrench },
+  { label: "Tire Service", icon: IconGauge },
+  { label: "Engine Diagnostics", icon: IconGauge },
+  { label: "Suspension", icon: IconWrench },
+  { label: "Battery Service", icon: IconBattery },
+  { label: "AC Service", icon: IconSnowflake },
+  { label: "Safety Inspection", icon: IconBadgeCheck },
 ];
 
 const testimonials = [
@@ -47,9 +62,10 @@ export default function HomePage() {
       <section className="space-y-8">
         <div className="grid gap-8 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shadow-sm">
+              <IconSparkles className="h-3.5 w-3.5 text-emerald-500" aria-hidden />
               Personal + Fleet Service
-            </p>
+            </div>
             <h1
               id="homepage-heading"
               className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
@@ -62,36 +78,40 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
                 href={`tel:${site.phone}`}
               >
+                <IconPhone className="h-4 w-4" aria-hidden />
                 Call Now
               </a>
               <Link
-                className="rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
                 href="/book"
               >
+                <IconCalendarCheck className="h-4 w-4" aria-hidden />
                 Book Appointment
               </Link>
               <a
-                className="rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
                 href={site.directionsUrl}
                 rel="noreferrer"
                 target="_blank"
               >
+                <IconMapPin className="h-4 w-4" aria-hidden />
                 Get Directions
               </a>
               <a
-                className="rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
                 href={site.whatsappUrl}
                 rel="noreferrer"
                 target="_blank"
               >
+                <IconMessage className="h-4 w-4" aria-hidden />
                 WhatsApp / Text Us
               </a>
             </div>
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur">
             <h2 className="text-lg font-semibold text-slate-900">
               What do you need help with today?
             </h2>
@@ -102,13 +122,27 @@ export default function HomePage() {
               {quickIssues.map((issue) => (
                 <Link
                   key={issue}
-                  className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-medium text-slate-900 transition hover:border-slate-300 hover:bg-white"
+                  className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-medium text-slate-900 transition hover:border-emerald-200 hover:bg-white hover:shadow-sm"
                   href={`/book?service=${encodeURIComponent(issue)}`}
                 >
                   {issue}
                 </Link>
               ))}
             </div>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <div className="flex items-center gap-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4 text-sm font-semibold text-emerald-900">
+            <IconBadgeCheck className="h-5 w-5" aria-hidden />
+            ASE-certified technicians on staff.
+          </div>
+          <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-900 shadow-sm">
+            <IconClock className="h-5 w-5 text-slate-700" aria-hidden />
+            Same-day slots for urgent repairs.
+          </div>
+          <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-900 shadow-sm">
+            <IconSparkles className="h-5 w-5 text-slate-700" aria-hidden />
+            Digital updates sent to your phone.
           </div>
         </div>
       </section>
@@ -124,9 +158,10 @@ export default function HomePage() {
             <li>Inspections</li>
           </ul>
           <Link
-            className="mt-4 inline-flex rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
             href="/book?type=personal"
           >
+            <IconCalendarCheck className="h-4 w-4" aria-hidden />
             Book Personal Service
           </Link>
         </div>
@@ -138,9 +173,10 @@ export default function HomePage() {
             <li>Fleet billing available</li>
           </ul>
           <Link
-            className="mt-4 inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
             href="/book?type=fleet"
           >
+            <IconCalendarCheck className="h-4 w-4" aria-hidden />
             Book Fleet Service
           </Link>
         </div>
@@ -151,10 +187,11 @@ export default function HomePage() {
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {trustSignals.map((signal) => (
             <div
-              key={signal}
-              className="rounded-xl border border-slate-100 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
+              key={signal.label}
+              className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
             >
-              {signal}
+              <signal.icon className="h-4 w-4 text-emerald-500" aria-hidden />
+              {signal.label}
             </div>
           ))}
         </div>
@@ -165,11 +202,16 @@ export default function HomePage() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {featuredServices.map((service) => (
             <Link
-              key={service}
+              key={service.label}
               href="/services"
-              className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-slate-300"
+              className="group rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md"
             >
-              {service}
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-white transition group-hover:bg-emerald-500">
+                  <service.icon className="h-4 w-4" aria-hidden />
+                </span>
+                {service.label}
+              </div>
             </Link>
           ))}
         </div>

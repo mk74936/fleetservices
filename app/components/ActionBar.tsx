@@ -1,5 +1,11 @@
 import Link from "next/link";
 import { site } from "../lib/site";
+import {
+  IconCalendarCheck,
+  IconMapPin,
+  IconMessage,
+  IconPhone,
+} from "./icons";
 
 export default function ActionBar() {
   return (
@@ -9,6 +15,7 @@ export default function ActionBar() {
           className="flex flex-col items-center gap-1 px-2 py-3 transition hover:bg-slate-50"
           href={`tel:${site.phone}`}
         >
+          <IconPhone className="h-4 w-4 text-slate-600" aria-hidden />
           <span>Call</span>
           <span className="text-[10px] text-slate-500">Now</span>
         </a>
@@ -18,6 +25,7 @@ export default function ActionBar() {
           rel="noreferrer"
           target="_blank"
         >
+          <IconMapPin className="h-4 w-4 text-slate-600" aria-hidden />
           <span>Directions</span>
           <span className="text-[10px] text-slate-500">Map</span>
         </a>
@@ -25,6 +33,7 @@ export default function ActionBar() {
           className="flex flex-col items-center gap-1 px-2 py-3 transition hover:bg-slate-50"
           href="/book"
         >
+          <IconCalendarCheck className="h-4 w-4 text-slate-600" aria-hidden />
           <span>Book</span>
           <span className="text-[10px] text-slate-500">Appointment</span>
         </Link>
@@ -34,6 +43,7 @@ export default function ActionBar() {
           rel="noreferrer"
           target="_blank"
         >
+          <IconMessage className="h-4 w-4 text-slate-600" aria-hidden />
           <span>WhatsApp</span>
           <span className="text-[10px] text-slate-500">Text</span>
         </a>

@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1 pb-20 sm:pb-0">
+        <main className="flex-1 bg-gradient-to-b from-slate-50 via-white to-slate-100 pb-20 sm:pb-0">
           <div className="mx-auto w-full max-w-6xl px-6 py-10 sm:py-12">
             {children}
           </div>
