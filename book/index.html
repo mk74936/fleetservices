@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Service</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Service booking</p>
+          <h1>Book your next visit</h1>
+          <p class="subtitle">
+            Tell us a little about your vehicle and preferred schedule. We will
+            confirm availability shortly.
+          </p>
+        </div>
+      </section>
+
+      <section class="card">
+        <form id="booking-form" class="form" novalidate>
+          <div class="form-grid">
+            <label class="field">
+              <span>Customer type</span>
+              <select name="customerType" id="customerType" required>
+                <option value="Retail" selected>Retail</option>
+                <option value="Fleet">Fleet</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Service</span>
+              <select name="service" id="service" required>
+                <option value="Oil Change">Oil Change</option>
+                <option value="Brakes">Brakes</option>
+                <option value="Tires">Tires</option>
+                <option value="Diagnostics">Diagnostics</option>
+                <option value="Fleet Inspection">Fleet Inspection</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Preferred date</span>
+              <input type="date" name="preferredDate" />
+            </label>
+
+            <label class="field">
+              <span>Preferred time</span>
+              <input type="time" name="preferredTime" />
+            </label>
+
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" />
+            </label>
+
+            <label class="field">
+              <span>Phone <em>(required)</em></span>
+              <input
+                type="tel"
+                name="phone"
+                autocomplete="tel"
+                required
+                placeholder="(555) 555-5555"
+              />
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" />
+            </label>
+          </div>
+
+          <div id="fleet-fields" class="fleet-fields" hidden>
+            <h2>Fleet details</h2>
+            <div class="form-grid">
+              <label class="field">
+                <span>Company name</span>
+                <input type="text" name="companyName" />
+              </label>
+
+              <label class="field">
+                <span>Vehicle unit/plate</span>
+                <input type="text" name="vehicleUnit" />
+              </label>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="4"></textarea>
+          </label>
+
+          <button type="submit" class="primary">Submit request</button>
+          <p id="success-message" class="success" role="status" hidden>
+            Thanks! Your request is in. We will follow up shortly.
+          </p>
+        </form>
+      </section>
+    </main>
+    <script src="book.js"></script>
+  </body>
+</html>
