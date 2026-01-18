@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fleet Services | Book",
+  description: "Request service appointments and quotes for your fleet.",
+};
+
 export default function BookPage() {
   return (
     <section className="space-y-6">

@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fleet Services | Fleet",
+  description: "Monitor fleet performance benchmarks and readiness.",
+};
+
 const fleetHighlights = [
   {
     label: "Active Vehicles",
