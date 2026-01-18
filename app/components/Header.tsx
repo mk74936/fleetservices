@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { site } from "../lib/site";
+import {
+  IconCalendarCheck,
+  IconHome,
+  IconMail,
+  IconPhone,
+  IconTruck,
+  IconWrench,
+} from "./icons";
 
 const navItems = [
-  { href: "/services", label: "Services" },
-  { href: "/fleet", label: "Fleet" },
-  { href: "/book", label: "Book" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", icon: IconHome },
+  { href: "/services", label: "Services", icon: IconWrench },
+  { href: "/fleet", label: "Fleet", icon: IconTruck },
+  { href: "/book", label: "Book", icon: IconCalendarCheck },
+  { href: "/contact", label: "Contact", icon: IconMail },
 ];
 
 export default function Header() {
@@ -25,8 +34,9 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="transition hover:text-slate-900"
+              className="flex items-center gap-2 transition hover:text-slate-900"
             >
+              <item.icon className="h-4 w-4 text-slate-500" aria-hidden />
               {item.label}
             </Link>
           ))}
@@ -36,6 +46,7 @@ export default function Header() {
             className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
             href={`tel:${site.phone}`}
           >
+            <IconPhone className="h-4 w-4" aria-hidden />
             Call Now
           </a>
           <span className="text-xs font-medium text-slate-600 sm:hidden">
@@ -49,8 +60,9 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="transition hover:text-slate-900"
+              className="flex items-center gap-2 transition hover:text-slate-900"
             >
+              <item.icon className="h-4 w-4 text-slate-500" aria-hidden />
               {item.label}
             </Link>
           ))}
