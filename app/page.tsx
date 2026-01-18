@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Local Fleet Service Requests",
+  title: "Local Fleet Service Requests & Scheduling",
   description:
-    "Request local fleet maintenance, inspection reminders, and pickup scheduling in minutes.",
+    "Request local fleet maintenance, inspection reminders, and pickup scheduling in minutes for neighborhood operators.",
   keywords: [
     "local fleet service",
     "fleet maintenance request",

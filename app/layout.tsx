@@ -4,11 +4,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Fleet Services | Local Fleet Maintenance",
+    default: "Fleet Services | Local Fleet Maintenance & Inspections",
     template: "%s | Fleet Services",
   },
   description:
-    "Fleet Services delivers local fleet maintenance, inspections, and repair scheduling for neighborhood operators.",
+    "Fleet Services delivers local fleet maintenance, inspections, and repair scheduling for neighborhood fleet operators.",
   keywords: [
     "fleet services",
     "local fleet maintenance",
