@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fleet Services | Contact",
+  description: "Reach the Fleet Services team for support or partnership requests.",
+};
+
 const contactDetails = [
   { label: "Phone", value: "+1 (555) 012-4410" },
   { label: "Email", value: "contact@fleetservices.com" },

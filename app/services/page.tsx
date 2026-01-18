@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fleet Services | Services",
+  description: "Explore maintenance, roadside, and telematics offerings.",
+};
+
 const services = [
   {
     title: "Routine Maintenance",
