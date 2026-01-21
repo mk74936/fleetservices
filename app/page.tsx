@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   IconBadgeCheck,
@@ -144,6 +145,33 @@ export default function HomePage() {
             <IconSparkles className="h-5 w-5 text-slate-700" aria-hidden />
             Digital updates sent to your phone.
           </div>
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[0.9fr,1.1fr] lg:items-center">
+        <div className="space-y-3">
+          <h2 className="text-xl font-semibold text-slate-900">
+            AI-guided service planning, delivered locally.
+          </h2>
+          <p className="text-sm text-slate-600">
+            We map every visit with clear visuals and easy-to-follow recommendations so
+            you know what your vehicle needs before work begins.
+          </p>
+          <ul className="text-sm font-medium text-slate-700">
+            <li>Clear status updates</li>
+            <li>Photos and notes from technicians</li>
+            <li>Priority scheduling for urgent repairs</li>
+          </ul>
+        </div>
+        <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <Image
+            src="/Images/hero-vehicle-service.svg"
+            alt="Illustration of a vehicle service visit"
+            width={1200}
+            height={800}
+            className="h-full w-full object-cover"
+            priority
+          />
         </div>
       </section>
 
