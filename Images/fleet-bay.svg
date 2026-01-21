@@ -1,0 +1,35 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+    <linearGradient id="truck" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb7185" />
+    </linearGradient>
+    <linearGradient id="van" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="64" fill="url(#bay)" />
+  <rect x="120" y="130" width="960" height="420" rx="40" fill="#111827" stroke="#334155" stroke-width="4" />
+  <rect x="160" y="170" width="880" height="160" rx="24" fill="#1e293b" />
+  <rect x="160" y="350" width="880" height="160" rx="24" fill="#0f172a" />
+  <rect x="220" y="370" width="380" height="110" rx="20" fill="url(#truck)" />
+  <rect x="240" y="390" width="160" height="60" rx="12" fill="#fde68a" />
+  <rect x="630" y="380" width="300" height="100" rx="20" fill="url(#van)" />
+  <rect x="650" y="400" width="140" height="60" rx="12" fill="#e0f2fe" />
+  <circle cx="280" cy="500" r="40" fill="#0f172a" />
+  <circle cx="520" cy="500" r="40" fill="#0f172a" />
+  <circle cx="700" cy="500" r="36" fill="#0f172a" />
+  <circle cx="880" cy="500" r="36" fill="#0f172a" />
+  <circle cx="280" cy="500" r="20" fill="#94a3b8" />
+  <circle cx="520" cy="500" r="20" fill="#94a3b8" />
+  <circle cx="700" cy="500" r="18" fill="#94a3b8" />
+  <circle cx="880" cy="500" r="18" fill="#94a3b8" />
+  <rect x="170" y="590" width="860" height="140" rx="70" fill="#0f172a" opacity="0.6" />
+  <path d="M200 240H520" stroke="#38bdf8" stroke-width="10" stroke-linecap="round" />
+  <path d="M680 240H1000" stroke="#f97316" stroke-width="10" stroke-linecap="round" />
+</svg>
